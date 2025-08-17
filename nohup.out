@@ -1,0 +1,11 @@
+[33m[nodemon] 3.1.10[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node server/index.js "" /tmp/tyro_api.log 2  echo 14507`[39m
+{"level":30,"time":1755394254614,"pid":14663,"hostname":"admin","PORT":5174,"msg":"API listening on 5174"}
+[0mGET / [33m404[0m 2.210 ms - 139[0m
+[0mGET / [33m404[0m 1.149 ms - 139[0m
+[0mGET / [33m404[0m 0.407 ms - 139[0m
+[0mGET / [33m404[0m 0.289 ms - 139[0m
+[0mGET / [33m404[0m 0.138 ms - 139[0m
