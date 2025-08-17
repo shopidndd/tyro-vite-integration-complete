@@ -28,11 +28,16 @@ app.use(express.json())
 app.use('/api/payments', paymentsRouter)
 app.use('/api/webhooks', webhooksRouter)
 
-// Serve Vite build in production
-if (process.env.NODE_ENV === 'production') {
+// Serve Vite build in production (when running standalone server)
+if (process.env.NODE_ENV === 'production' && !process.env.VERCEL) {
   app.use(express.static(path.resolve(__dirname, '../dist')))
   app.get('*', (_, res) => res.sendFile(path.resolve(__dirname, '../dist/index.html')))
 }
 
+// Only listen locally (dev or standalone prod). In Vercel serverless, the platform invokes the handler.
 const PORT = process.env.PORT || 5174
-app.listen(PORT, () => logger.info({ PORT }, `API listening on ${PORT}`))
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => logger.info({ PORT }, `API listening on ${PORT}`))
+}
+
+export default app
